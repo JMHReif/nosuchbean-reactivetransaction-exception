@@ -1,0 +1,34 @@
+124,126d123
+<    Neo4jDataAutoConfiguration#transactionManager matched:
+<       - @ConditionalOnMissingBean (types: org.springframework.transaction.TransactionManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+< 
+214a212,214
+>    TransactionAutoConfiguration#transactionalOperator matched:
+>       - @ConditionalOnSingleCandidate (types: org.springframework.transaction.ReactiveTransactionManager; SearchStrategy: all) found a single bean 'reactiveTransactionManager'; @ConditionalOnMissingBean (types: org.springframework.transaction.reactive.TransactionalOperator; SearchStrategy: all) did not find any beans (OnBeanCondition)
+> 
+216c216
+<       - @ConditionalOnBean (types: org.springframework.transaction.TransactionManager; SearchStrategy: all) found bean 'transactionManager'; @ConditionalOnMissingBean (types: org.springframework.transaction.annotation.AbstractTransactionManagementConfiguration; SearchStrategy: all) did not find any beans (OnBeanCondition)
+---
+>       - @ConditionalOnBean (types: org.springframework.transaction.TransactionManager; SearchStrategy: all) found bean 'reactiveTransactionManager'; @ConditionalOnMissingBean (types: org.springframework.transaction.annotation.AbstractTransactionManagementConfiguration; SearchStrategy: all) did not find any beans (OnBeanCondition)
+221,226d220
+<    TransactionAutoConfiguration.TransactionTemplateConfiguration matched:
+<       - @ConditionalOnSingleCandidate (types: org.springframework.transaction.PlatformTransactionManager; SearchStrategy: all) found a single bean 'transactionManager' (OnBeanCondition)
+< 
+<    TransactionAutoConfiguration.TransactionTemplateConfiguration#transactionTemplate matched:
+<       - @ConditionalOnMissingBean (types: org.springframework.transaction.support.TransactionOperations; SearchStrategy: all) did not find any beans (OnBeanCondition)
+< 
+613a608,611
+>    Neo4jDataAutoConfiguration#transactionManager:
+>       Did not match:
+>          - @ConditionalOnMissingBean (types: org.springframework.transaction.TransactionManager; SearchStrategy: all) found beans of type 'org.springframework.transaction.TransactionManager' reactiveTransactionManager (OnBeanCondition)
+> 
+792,795d789
+<    TransactionAutoConfiguration#transactionalOperator:
+<       Did not match:
+<          - @ConditionalOnSingleCandidate (types: org.springframework.transaction.ReactiveTransactionManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+< 
+798a793,796
+> 
+>    TransactionAutoConfiguration.TransactionTemplateConfiguration:
+>       Did not match:
+>          - @ConditionalOnSingleCandidate (types: org.springframework.transaction.PlatformTransactionManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
